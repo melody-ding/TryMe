@@ -1,0 +1,25 @@
+{
+  "name": "TryMe",
+  "version": "1.0.0",
+  "description": "Cal Hacks 6.0",
+  "main": "eluvio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melody-ding/TryMe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melody-ding/TryMe/issues"
+  },
+  "homepage": "https://github.com/melody-ding/TryMe#readme",
+  "dependencies": {
+    "@eluvio/elv-client-js": "^0.2.8",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,23 @@
+@import "styles";
+
+.-elv-tooltip {
+  @include elv-no-select;
+  align-items: center;
+  background-color: $elv-color-lightestgray;
+  border: 1px solid $elv-color-mediumgray;
+  border-radius: 10px;
+  color: $elv-color-text-dark;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  max-width: 250px;
+  min-width: 50px;
+  opacity: 0.95;
+  padding: $elv-spacing-xxs;
+  text-align: center;
+  z-index: 10000;
+
+  span {
+    padding: $elv-spacing-xs;
+  }
+}

@@ -1,0 +1,82 @@
+@import "styles";
+
+$slider-height: 12px;
+
+.-elv-slider-container {
+  height: $slider-height;
+  width: 100%;
+
+  &.-elv-slider-with-marks {
+    height: calc(#{$slider-height} + 1.8em);
+  }
+}
+
+.-elv-slider {
+  background-color: $elv-color-black;
+  cursor: pointer;
+  height: $slider-height;
+  position: relative;
+  width: 100%;
+}
+
+.-elv-slider-overlay {
+  background-color: transparent;
+  height: $slider-height;
+  width: 100%;
+  z-index: 1000000;
+}
+
+.-elv-slider-active {
+  background-color: $elv-color-darkgray;
+  height: $slider-height;
+  opacity: 0.8;
+  position: absolute;
+}
+
+.-elv-slider-handle {
+  background-color: $elv-color-lightgray;
+  height: $slider-height;
+  margin-left: -2px;
+  position: absolute;
+  width: 4px;
+  z-index: 100;
+}
+
+.-elv-slider-handle-active {
+  background-color: $elv-color-mediumblue;
+}
+
+.-elv-slider-marks-container {
+  @include elv-no-select;
+  color: $elv-color-mediumgray;
+  cursor: auto;
+  height: calc(25px + 1rem);
+  position: relative;
+
+  .-elv-slider-mark {
+    display: flex;
+    font-size: 11px;
+    justify-content: center;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  .-elv-slider-mark-notch {
+    background-color: $elv-color-darkgray;
+    height: $slider-height;
+    margin-top: -$slider-height;
+    position: absolute;
+    width: 2px;
+    z-index: 100;
+  }
+
+  .-elv-slider-mark-text {
+    padding-top: $elv-spacing-xxs;
+  }
+
+  .-elv-slider-mark-passed {
+    .-elv-slider-mark-text {
+      color: $elv-color-darkgray;
+    }
+  }
+}

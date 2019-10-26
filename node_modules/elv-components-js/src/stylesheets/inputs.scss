@@ -1,0 +1,11 @@
+@import "styles";
+
+textarea {
+  &.json-field {
+    width: 100%;
+
+    &.invalid {
+      outline: 2px solid $elv-color-red;
+    }
+  }
+}

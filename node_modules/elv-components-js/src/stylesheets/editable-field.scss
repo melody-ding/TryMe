@@ -1,0 +1,23 @@
+@import "styles";
+
+.-elv-editable-field {
+  align-items: center;
+  display: flex;
+
+  div {
+    &:not(:empty) {
+      margin-right: $elv-spacing-xs;
+    }
+  }
+
+  button {
+    height: $elv-font-l;
+    width: $elv-font-l;
+  }
+
+  input,
+  textarea {
+    font-family: inherit;
+    margin-right: $elv-spacing-xs;
+  }
+}
