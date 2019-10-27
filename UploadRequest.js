@@ -2,14 +2,16 @@ var async = require('async');
 var fs = require('fs');
 var pg = require('pg');
 
+let submission = "Show me cute animal videos"
+
 // Connect to the "bank" database.
 var config = {
-    user: 'maxroach',
-    host: 'localhost',
-    database: 'bank',
+    user: 'melodyding',
+    host: 'gcp-us-west1.tryme-calhacks2019.crdb.io',
+    database: 'defaultdb',
     port: 26257,
     ssl: {
-        ca: fs.readFileSync('certs/ca.crt')
+        ca: fs.readFileSync('tryme-calhacks2019-ca')
             .toString(),
         key: fs.readFileSync('certs/client.maxroach.key')
             .toString(),
@@ -36,15 +38,11 @@ pool.connect(function (err, client, done) {
     async.waterfall([
             function (next) {
                 // Create the 'accounts' table.
-                client.query('CREATE TABLE IF NOT EXISTS accounts (id INT PRIMARY KEY, balance INT);', next);
+                client.query('CREATE TABLE IF NOT EXISTS requests (id INT PRIMARY KEY, request varchar(280));', next);
             },
             function (results, next) {
                 // Insert two rows into the 'accounts' table.
-                client.query('INSERT INTO accounts (id, balance) VALUES (1, 1000), (2, 250);', next);
-            },
-            function (results, next) {
-                // Print out account balances.
-                client.query('SELECT id, balance FROM accounts;', next);
+                client.query('INSERT INTO requests (id, request) VALUES (1, submission);', next);
             },
         ],
         function (err, results) {
