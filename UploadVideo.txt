@@ -1,7 +1,7 @@
 const { ElvClient } = require("@eluvio/elv-client-js");
 var fs = require('fs');
 
-var uploadVid = async (filePath) => {
+var uploadVid = async () => {
 	 const client = await ElvClient.FromConfigurationUrl({
 	  configUrl: "https://demo.net955210.contentfabric.io/config"
 	});
@@ -36,8 +36,10 @@ var uploadVid = async (filePath) => {
       return fileSizeInBytes
   }
 
-	let data = fs.readFileSync(filePath);
-	let dataSize = getFilesizeInBytes(filePath);
+	// var reader = new FileReader();
+	// let file = readAsDataURL();
+	let data = fs.readFileSync("/Users/Melody/documents/fall2019/calhacks2019/TryMe/samples/bunny_video.mp4");
+	let dataSize = getFilesizeInBytes("/Users/Melody/documents/fall2019/calhacks2019/TryMe/samples/bunny_video.mp4");
 	await client.UploadFiles({
 	  libraryId,
 	  objectId,
@@ -60,3 +62,5 @@ var uploadVid = async (filePath) => {
 
 	const versionHash = finalizeResponse.hash;
 };
+
+uploadVid();

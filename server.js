@@ -2,8 +2,8 @@ const express = require('express')
 const { ElvClient } = require("@eluvio/elv-client-js");
 var fs = require('fs');
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.get('/', function(req,res) {
 	upload().then(() => res.send('Hello World! This is melody'))
