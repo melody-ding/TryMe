@@ -11,7 +11,7 @@ With the pressure that comes with the power of social media, users are faced wit
 
 We are inviting users to try new things together everyday. 
 
- 	We built our user interface using Figma. To store user data and TryMe requests, we created SQL databases using Cockroach Labs clusters on their Cloud service. As for video uploading and distribution, we used the Eluv.io API on a Node.js back end. We chose to use Eluv.io because they offer high quality video distribution without requiring the internet space of other platforms like Youtube. Additionally, if we could further develop our program, their blockchain ledger smart contracts offer immense possibilities in terms of monetization of the video content.
+We built our user interface using Figma. To store user data and TryMe requests, we created SQL databases using Cockroach Labs clusters on their Cloud service. As for video uploading and distribution, we used the Eluv.io API on a Node.js back end. We chose to use Eluv.io because they offer high quality video distribution without requiring the internet space of other platforms like Youtube. Additionally, if we could further develop our program, their blockchain ledger smart contracts offer immense possibilities in terms of monetization of the video content.
   
 Being relatively new to full stack development, we found it difficult to bridge the different components of our code. Using the APIs was also a learning curve, as we found it difficult to understand how each service worked. Additionally, since a lot of of our front-back end communications depended on HTTP requests, the spotty Internet impeded on our ability to integrate the final product. Thus, our server ended having to be run on a local device.
 
