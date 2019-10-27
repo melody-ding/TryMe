@@ -9,6 +9,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Alamofire
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -24,6 +25,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         present(imagePickerController, animated: true, completion: nil)
         
+    }
+    
+    func uploadVideo(videoUrl: URL) { // local video file path..
+        let timestamp = NSDate().timeIntervalSince1970 // just for some random name.
+        
+        let endpoint = "https://b55e5736.ngrok.io"
+        
+        // figure out if this is a post request or a get request. 
+        // how to access this multipart content in your node server
+        // download file to the computer and then upload that to eluv.io
+        // takethe parameter ocntent and throw it into eluv.io
+        AF.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(videoUrl, withName: "image", fileName: "\(timestamp).mp4", mimeType: "\(timestamp)/mp4")
+        }, to: endpoint  ).responseJSON { (response) in
+            print(response)
+        }
     }
     
     override func viewDidLoad() {
@@ -65,6 +82,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let videoURL = videoURL {
             if let previewImage = previewImageFromVideo(url: videoURL) {
                 imageView.image = previewImage
+                
             } else {
                 print("No image!")
             }
