@@ -6,11 +6,9 @@ const app = express()
 const port = 3000
 
 app.get('/', function(req,res) {
-	res.send('Hello World! This is melody');
-});
-
-app.post('/', function(req, res){
-  	upload();
+	upload().then(() => res.send('Hello World! This is melody'))
+	//console.log(upload());
+	
 });
 
 async function upload() {
@@ -74,6 +72,7 @@ async function upload() {
 	});
 
 	const versionHash = finalizeResponse.hash;
+	return true;
 }
 
 
