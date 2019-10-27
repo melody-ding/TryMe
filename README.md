@@ -1,7 +1,7 @@
 # TryMe
 Cal Hacks 6.0
 
-Run our app in the XCode simulator
+Run our app in the XCode simulator in TryMe2. Run our server with server.js.
 
 TryMe is a video sharing platform that strives to personalize and encourage content creation by way of creator-viewer collaboration. Users interact with our app in two ways: submit requests onto a public feed for videos that they would like to see created, or respond to requests by posting their own content.
 
